@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+    <title>Quest Store</title>
+
+    <meta charset="UTF-8">
+    <meta name="description" content="Quest Store">
+    <meta name="keywords" content="Codecool, Quest Store">
+    <meta name="author" content="John Doe">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/wallet.css">
+    <link rel="stylesheet" href="../css/shop.css">
+
+    <script src="https://kit.fontawesome.com/bd5d5911de.js" crossorigin="anonymous"></script>
+    <script src="../script.js" defer></script>
+    <script src="../artifactScript.js" defer></script>
+
+</head>
+
+<body>
+
+<header>
+    <a id="hamburgerMenu" href="#" onclick="openSlideMenu()">
+        <i class="fas fa-bars"></i>
+    </a>
+        <a href="index.html">
+            <img id="Public/image" src="../images/logo.png">
+        </a>
+        <div class="topBarButtons" id="topBarButton">
+            <a id="user" href="userView.html">
+                <i class="far fa-user-circle"></i>
+                Codecooler
+            </a>
+            <a id="signOut" href="login.html">
+                <i class="fas fa-sign-out-alt"></i>
+                Log out
+            </a>
+        </div>
+</header>
+
+<div id="content">
+
+    <div id="menu" class="nav">
+        <a href="#" class="close" onclick="closeSlideMenu()">
+            <i class="fas fa-times"></i>
+        </a>
+        <a href="wallet.html">Wallet</a>
+        <a href="shop.html">Shop</a>
+        <a href="quests.html">Quests</a>
+    </div>
+
+    <div id="inner-content">
+
+        <template id="artifact-template">
+            <div class="artifact-card">
+                <div class="price-tag">
+                    price
+                </div>
+                <img src="../images/photo.png">
+                <h2 class="artifact-name">Name</h2>
+                <div class="description">
+                    desc
+                </div>
+            </div>
+        </template>
+
+        <div class="cards-container">
+
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

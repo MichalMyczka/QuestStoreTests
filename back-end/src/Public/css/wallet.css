@@ -1,0 +1,68 @@
+#inner-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 8px 250px;
+}
+
+#inner-content *{
+    display: flex;
+    border-radius: 15px;
+}
+
+.balance-container {
+    font-size: 5vh;
+    height: 6vh;
+    padding: 8px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: lightgrey;
+}
+
+#balance + .fa-coins {
+    margin-left: 0.5vw;
+}
+.balance {
+    justify-content: space-between;
+}
+
+.fa-coins {
+    padding-top: 5px;
+}
+
+.cards-container {
+    justify-content: center;
+    margin-top: 8px;
+    background-color: lightgrey;
+    flex-wrap: wrap;
+}
+
+.artifact-card {
+    flex-direction: column;
+    background-color: lightcoral;
+    align-items: center;
+    border-radius: 10px;
+    width: 200px;
+    margin: 1vw;
+    padding: 1vw;
+}
+
+.artifact-card:hover {
+    box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+}
+
+.description{
+    font-size: 80%;
+}
+
+.artifact-card > h2 {
+    text-align: center;
+    color: white;
+}
+
+.artifact-card > img {
+    border-radius: 10px;
+}
+
+
+

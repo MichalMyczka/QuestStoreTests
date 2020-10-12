@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+    <title>MentorView</title>
+
+    <meta charset="UTF-8">
+    <meta name="description" content="MentorView">
+    <meta name="keywords" content="Codecool, Quest Store">
+    <meta name="author" content="John Doe">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/user-view.css">
+
+    <script src="https://kit.fontawesome.com/bd5d5911de.js" crossorigin="anonymous"></script>
+    <script src="../profileScript.js" defer></script>
+    <script src="../script.js" defer></script>
+
+
+</head>
+
+<body>
+
+<header>
+    <a id="hamburgerMenu" href="#" onclick="openSlideMenu()">
+        <i class="fas fa-bars"></i>
+    </a>
+    <a href="index.html">
+        <img id="image" src="../images/logo.png">
+    </a>
+    <div class="topBarButtons" id="topBarButton">
+        <a id="user" href="userView.html">
+            <i class="far fa-user-circle"></i>
+            Creep
+        </a>
+        <a id="signOut" href="login.html">
+            <i class="fas fa-sign-out-alt"></i>
+            Log out
+        </a>
+    </div>
+</header>
+
+<div id="content">
+    <div class="card-container">
+        <img
+                class="picture"
+                src="../images/profilePicture.webp"
+                alt="user"
+        />
+        <h3 class="name"></h3>
+        <h2 class="surname"></h2>
+        <h3 class="phone"></h3>
+        <p>
+            Status: creep <br/>
+        </p>
+        <p class="email"></p>
+        <button class="password">change password</button>
+
+    </div>
+
+</div>
+
+<div id="menu" class="nav">
+    <a href="#" class="close" onclick="closeSlideMenu()">
+        <i class="fas fa-times"></i>
+    </a>
+    <a href="manageAccounts.html">Manage accounts</a>
+    <a href="classes.html">Classes</a>
+</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+    <title>MentorView</title>
+
+    <meta charset="UTF-8">
+    <meta name="description" content="MentorView">
+    <meta name="keywords" content="Codecool, Quest Store">
+    <meta name="author" content="John Doe">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/mentor.css">
+    <link rel="stylesheet" href="../css/shop.css">
+    <script src="https://kit.fontawesome.com/bd5d5911de.js" crossorigin="anonymous"></script>
+    <script src="../script.js" defer></script>
+
+
+</head>
+
+<body>
+
+<header>
+    <a id="hamburgerMenu" href="#" onclick="openSlideMenu()">
+        <i class="fas fa-bars"></i>
+    </a>
+    <a href="index.html">
+        <img id="image" src="../images/logo.png">
+    </a>
+    <div class="topBarButtons" id="topBarButton">
+        <a id="user" href="userView.html">
+            <i class="far fa-user-circle"></i>
+            user
+        </a>
+        <a id="signOut" href="login.html">
+            <i class="fas fa-sign-out-alt"></i>
+            sign out
+        </a>
+    </div>
+</header>
+
+<div class="content">
+
+
+    <div id="storeMenu">
+        <div class="topSearchBar">
+            <div class="wholeSearch">
+                <input class="search" type="text" name="card name" value="card name">
+                <button class="button"><i class="fas fa-search"></i>
+                </button>
+            </div>
+            <button class="button" class="addStudent"><i class="fas fa-trash-alt"></i></button>
+            <button class="button" class="addStudent"><i class="fas fa-arrow-up"></i></button>
+            <button class="button" class="addStudent"><i class="fas fa-plus"></i></button>
+        </div>
+    </div>
+
+    <div id="inner-content">
+
+        <div class="cards-container">
+            <div class="artifact-card">
+                <div class="price-tag">
+                    2.5$
+                </div>
+                <img src="../images/photo.png">
+                <h2>Name of artifact</h2>
+                <div class="description">
+                    Maecenas tincidunt tortor in enim mollis, vel blandit mauris tincidunt. Maecenas commodo ut nunc
+                    sit amet pulvinar. Maecenas tempus odio ut hendrerit ullamcorper. Pellentesque quis diam erat.
+                    Donec imperdiet blandit odio et finibus. Suspendisse dictum rhoncus diam, id tincidunt urna
+                </div>
+            </div>
+            <div class="artifact-card">
+                <div class="price-tag">
+                    11$
+                </div>
+                <img src="../images/photo.png">
+                <h2>Name of artifact</h2>
+                <div class="description">
+                    Maecenas tincidunt tortor in enim mollis, vel blandit mauris tincidunt. Maecenas commodo ut nunc
+                    sit amet pulvinar. Maecenas tempus odio ut hendrerit ullamcorper. Pellentesque quis diam erat.
+                    Donec imperdiet blandit odio et finibus. Suspendisse dictum rhoncus diam, id tincidunt urna
+                </div>
+            </div>
+            <div class="artifact-card">
+                <div class="price-tag">
+                    199$
+                </div>
+                <img src="../images/photo.png">
+                <h2>Name of artifact</h2>
+                <div class="description">
+                    Maecenas tincidunt tortor in enim mollis, vel blandit mauris tincidunt. Maecenas commodo ut nunc
+                    sit amet pulvinar. Maecenas tempus odio ut hendrerit ullamcorper. Pellentesque quis diam erat.
+                    Donec imperdiet blandit odio et finibus. Suspendisse dictum rhoncus diam, id tincidunt urna
+                </div>
+            </div>
+            <div class="artifact-card">
+                <div class="price-tag">
+                    2$
+                </div>
+                <img id="artifact-photo" src="../images/photo.png">
+                <h2>Name of artifact</h2>
+                <div class="description">
+                    Maecenas tincidunt tortor in enim mollis, vel blandit mauris tincidunt. Maecenas commodo ut nunc
+                    sit amet pulvinar. Maecenas tempus odio ut hendrerit ullamcorper. Pellentesque quis diam erat.
+                    Donec imperdiet blandit odio et finibus. Suspendisse dictum rhoncus diam, id tincidunt urna
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+<div id="menu" class="nav">
+    <a href="#" class="close" onclick="closeSlideMenu()">
+        <i class="fas fa-times"></i>
+    </a>
+    <a href="mentor-student.html">Students</a>
+    <a href="mentor-store.html">Store</a>
+    <a href="mentor-quests.html">Quests</a>
+</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+    <title>Manage mentors</title>
+
+    <meta charset="UTF-8">
+    <meta name="description" content="Manage Accounts">
+    <meta name="keywords" content="Codecool, Quest Store">
+    <meta name="author" content="John Doe">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/creep.css">
+    <script src="https://kit.fontawesome.com/bd5d5911de.js" crossorigin="anonymous"></script>
+    <script src="../script.js" defer></script>
+    <script src="../mentorsScript.js" defer></script>
+
+</head>
+
+<body>
+
+<template id="mentor-template">
+    <tr>
+        <td class="name"></td>
+        <td class="surname"></td>
+        <td class="email"></td>
+        <td class="phone"></td>
+        <td>
+            <span class="profile"><a href="#!"><i class="far fa-user"></i></a></span>
+        </td>
+
+        <td>
+            <div class="popup"><i class="far fa-edit"></i>
+                <span class="popuptext" id="myPopup">
+                    <table>
+                      <tr class="editTable">
+                        <td class="editCells" id="edit-name">name</td>
+                        <td class="editCells" id="edit-surname">surname</td>
+                        <td class="editCells" id="edit-mail">email</td>
+                        <td class="editCells" id="edit-phone">phone</td>
+                      </tr>
+                    </table>
+                 </span>
+            </div>
+        </td>
+        <td>
+            <button type="button" class="removeButton">Remove</button>
+        </td>
+    </tr>
+</template>
+
+<header>
+    <a id="hamburgerMenu" href="#" onclick="openSlideMenu()">
+        <i class="fas fa-bars"></i>
+    </a>
+    <a href="index.html">
+        <img id="Public/image" src="../images/logo.png">
+    </a>
+    <div class="topBarButtons" id="topBarButton">
+        <a id="user" href="mentorView.html">
+            <i class="far fa-user-circle"></i>
+            Mentor
+        </a>
+        <a id="signOut" href="login.html">
+            <i class="fas fa-sign-out-alt"></i>
+            Log out
+        </a>
+    </div>
+</header>
+
+<div id="content">
+    <div id="menu" class="nav">
+        <a href="#" class="close" onclick="closeSlideMenu()">
+            <i class="fas fa-times"></i>
+        </a>
+        <a href="manageAccounts.html">Manage accounts</a>
+        <a href="classes.html">Classes</a>
+    </div>
+</div>
+<a href="students.html" class="button">Students -></a>
+<br><div class="card">
+    <h3><strong>Mentors</strong></h3>
+    <div class="card-body">
+        <div id="table" class="table-editable">
+            <table>
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>Email</th>
+                    <th>Phone number</th>
+                    <th>Profile</th>
+                    <th>Edit</th>
+                </tr>
+                </thead>
+                <tbody class="mentors-container">
+
+                </tbody>
+            </table>
+            <button id="add" type="button">Add mentor</button>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

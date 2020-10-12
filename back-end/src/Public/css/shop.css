@@ -1,0 +1,65 @@
+#inner-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 8px 250px;
+}
+
+#inner-content *{
+    display: flex;
+    border-radius: 15px;
+}
+
+.cards-container {
+    justify-content: center;
+    margin-top: 8px;
+    background-color: lightgrey;
+    flex-wrap: wrap;
+}
+
+.artifact-card {
+    position:relative;
+    padding-top:20px;
+    display:inline-block;
+    flex-direction: column;
+    background-color: lightcoral;
+    align-items: center;
+    border-radius: 10px;
+    width: 200px;
+    margin: 1vw;
+    padding: 1vw;
+}
+
+.artifact-card:hover {
+    box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+}
+
+.description{
+    font-size: 80%;
+}
+
+.artifact-card > h2 {
+    text-align: center;
+    color: white;
+}
+
+.artifact-card > img {
+    border-radius: 10px;
+}
+
+.price-tag{
+    position: absolute;
+    right:5px;
+    top: 5px;
+    background: beige;
+    text-align: center;
+    border-radius: 30px 30px 30px 30px;
+    color: black;
+    border-style: solid;
+    border-width: 6px;
+    border-color: black;
+    padding:5px 10px;
+    font-size:20px;
+}
+
+

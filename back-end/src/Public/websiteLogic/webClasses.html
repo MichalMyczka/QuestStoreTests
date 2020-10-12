@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+    <title>WEB/CSS/JS</title>
+
+    <meta charset="UTF-8">
+    <meta name="description" content="Manage Accounts">
+    <meta name="keywords" content="Codecool, Quest Store">
+    <meta name="author" content="John Doe">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/creep.css">
+    <script src="https://kit.fontawesome.com/bd5d5911de.js" crossorigin="anonymous"></script>
+    <script src="../script.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <a id="hamburgerMenu" href="#" onclick="openSlideMenu()">
+            <i class="fas fa-bars"></i>
+        </a>
+        <a href="index.html">
+            <img id="Public/image" src="../images/logo.png">
+        </a>
+        <div class="topBarButtons" id="topBarButton">
+            <a id="user" href="userView.html">
+                <i class="far fa-user-circle"></i>
+                Codecooler
+            </a>
+            <a id="signOut" href="login.html">
+                <i class="fas fa-sign-out-alt"></i>
+                Log out
+            </a>
+        </div>
+    </header>
+
+<div id="content">
+    <div id="menu" class="nav">
+        <a href="#" class="close" onclick="closeSlideMenu()">
+            <i class="fas fa-times"></i>
+        </a>
+        <a href="manageAccounts.html">Manage accounts</a>
+        <a href="classes.html">Classes</a>
+    </div>
+</div>
+<br><div class="card">
+    <h3><strong>WEB/CSS/JS classes</strong></h3>
+    <button id="add" type="button">Create new class</button>
+    <div class="card-body">
+      <div id="table" class="table-editable">
+        <table>
+          <thead>
+            <tr>
+                <th>Module 1</th>
+                <th>Mentors: Adrian Widlak</th>
+            </tr>
+            <tr>
+              <th>Name</th>
+              <th>Surname</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Tomek</td>
+              <td>Krogulec</td>
+              <td>tomek.krogulec@gmail.com</td>
+              <td>
+                <button type="button">Remove</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Patryk</td>
+              <td>Krol</td>
+              <td>patryk.krol@gmail.com</td>
+              <td>
+                <button type="button">Remove</button>
+              </td>
+            </tr>
+            </tr>
+          </tbody>
+        </table>
+        <button id="add" type="button">Add student</button><br>
+      </div>
+      <table>
+        <thead>
+            <tr>
+                <th>Module 2</th>
+                <th>Mentors: Adrian Widlak</th>
+            </tr>
+          <tr>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Marta</td>
+            <td>Skarbek</td>
+            <td>marta.skarbek@gmail.com</td>
+            <td>
+              <button type="button">Remove</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Mikolaj</td>
+            <td>Urbanek</td>
+            <td>mikolaj.urbanek@gmail.com</td>
+            <td>
+              <button type="button">Remove</button>
+            </td>
+          </tr>
+          </tr>
+        </tbody>
+      </table>
+      <button id="add" type="button">Add student</button>
+    </div>
+  </div>
+</body>
+
+</html>
