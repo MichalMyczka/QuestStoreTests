@@ -1,19 +1,20 @@
 package org.example.DAO;
 
-import junit.framework.TestCase;
 import org.example.model.Mentor;
 import org.junit.Assert;
+import org.junit.jupiter.api.Test;
 
 import java.util.UUID;
 
-import static org.mockito.Mockito.mock;
+import static org.junit.jupiter.api.Assertions.*;
 
-public class MentorDAOTest extends TestCase {
+class MentorDAOTest {
 
-    public void testAdd() {
+    @Test
+    void add() {
         UUID roleUUID = UUID.fromString("745792a7-681b-4efe-abdd-ca027678b397");
         Mentor testingMentor = new Mentor(UUID.randomUUID(), "testest", "test", "blabla", "bla", roleUUID,
-        true, "1234", "mentor", UUID.randomUUID());
+                true, "1234", "mentor", UUID.randomUUID());
         DBConnection dbConnection = new DBConnection();
         MentorDAO mentorDAO = new MentorDAO(dbConnection);
         int expected = mentorDAO.getAll().size()+1;
@@ -21,15 +22,19 @@ public class MentorDAOTest extends TestCase {
         Assert.assertEquals(expected,mentorDAO.getAll().size());
     }
 
-    public void testRemove() {
+    @Test
+    void remove() {
     }
 
-    public void testEdit() {
+    @Test
+    void edit() {
     }
 
-    public void testGetAll() {
+    @Test
+    void getAll() {
     }
 
-    public void testGet() {
+    @Test
+    void get() {
     }
 }
