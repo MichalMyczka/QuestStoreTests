@@ -1,5 +1,7 @@
 package org.example.model;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 public abstract class User {
@@ -86,6 +88,20 @@ public abstract class User {
 
     public String getRole() {
         return role;
+    }
+
+    public List<String> getAll(){
+        List<String> lista = new ArrayList<>();
+        lista.add(getName());
+        lista.add(getSurname());
+        lista.add(getRole());
+        lista.add(getEmail());
+        lista.add(getPassword());
+        lista.add(getPhoneNumber());
+        lista.add(getRoleID().toString());
+        lista.add(getUserDetailsID().toString());
+        lista.add(getClass().toString());
+        return lista;
     }
 
 }
