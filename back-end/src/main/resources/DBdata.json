@@ -1,5 +1,5 @@
 {
-    "DBConnection": "jdbc:postgresql://ec2-54-217-236-206.eu-west-1.compute.amazonaws.com/dfqdddasahi8nl?sslmode=require",
-    "DBUser": "lahabwdfwwaevk",
-    "DBPassword": "39b2388bcffdfc7917aef79f445a3a97d284e50182b9f8a0e808c9706591964e"
+    "DBConnection": "jdbc:postgresql://ec2-54-228-170-125.eu-west-1.compute.amazonaws.com/deabgrr0rsprdt?sslmode=require",
+    "DBUser": "mnmalkomcfpkkc",
+    "DBPassword": "8a16b7aaa776100a048de7b60e56a4078ba5eadd3421bc84732e39bea306822e"
 }
