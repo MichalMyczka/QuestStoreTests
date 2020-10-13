@@ -10,12 +10,11 @@ import static org.mockito.Mockito.when;
 public class ArtifactDAOTest extends TestCase {
 
     public void testAdd() {
-//        Artifact dummyArtifact = mock(Artifact.class);
-//        DBConnection dummydbConn = mock(DBConnection.class);
-//        ArtifactDAO artifactDAO = new ArtifactDAO(dummydbConn);
-//        artifactDAO.add(dummyArtifact);
-//        when(dummydbConn.)
-//        Assert.assertEquals(1,artifactDAO.getAll().size());
+        Artifact dummyArtifact = mock(Artifact.class);
+        DBConnection dbConnection = new DBConnection();
+        ArtifactDAO artifactDAO = new ArtifactDAO(dbConnection);
+        artifactDAO.add(dummyArtifact);
+        Assert.assertEquals(11,artifactDAO.getAll().size());
     }
 
     public void testRemove() {
