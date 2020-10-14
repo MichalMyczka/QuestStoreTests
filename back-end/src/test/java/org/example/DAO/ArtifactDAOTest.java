@@ -26,8 +26,33 @@ class ArtifactDAOTest {
     }
 
     @Test
+    @Order(2)
+    void get() throws AbsenceOfRecordsException {
+        DBConnection dbConnection = new DBConnection();
+        UUID categoryID = UUID.fromString("d5e59add-a91c-488e-8f7b-061d36b9ec36"); // z tabeli categories
+        UUID typeID = UUID.fromString("a623b302-c968-4125-aaab-de6c15dd1a41"); // private z tabeli artifact_types
+        UUID artifactID = UUID.fromString("2bb2bdd1-3e3a-49f7-afc4-98434282b110");
+        ArtifactDAO artifactDAO = new ArtifactDAO(dbConnection);
+        Artifact testingArtifact = new Artifact(artifactID, "testowyArtefakt", 666, "physical item", "to jest testowy art", "private", categoryID, typeID);
+        Assert.assertEquals(testingArtifact.getAll(), artifactDAO.get(artifactID).getAll());
+    }
+
+    @Test
+    @Order(3)
+    void edit() throws AbsenceOfRecordsException {
+        DBConnection dbConnection = new DBConnection();
+        UUID categoryID = UUID.fromString("d5e59add-a91c-488e-8f7b-061d36b9ec36"); // z tabeli categories
+        UUID typeID = UUID.fromString("a623b302-c968-4125-aaab-de6c15dd1a41"); // private z tabeli artifact_types
+        UUID artifactID = UUID.fromString("2bb2bdd1-3e3a-49f7-afc4-98434282b110");
+        ArtifactDAO artifactDAO = new ArtifactDAO(dbConnection);
+        Artifact testingArtifact = new Artifact(artifactID, "zmienionyTestowyArtefakt", 2137, "physical item", "to jest edytowany art", "private", categoryID, typeID);
+        artifactDAO.edit(testingArtifact);
+        Assert.assertEquals(testingArtifact.getAll(), artifactDAO.get(artifactID).getAll());
+    }
+
+    @Test
     @Order(4)
-    void remove() throws AbsenceOfRecordsException {
+    void remove() {
         DBConnection dbConnection = new DBConnection();
         ArtifactDAO artifactDAO = new ArtifactDAO(dbConnection);
         UUID categoryID = UUID.fromString("d5e59add-a91c-488e-8f7b-061d36b9ec36"); // z tabeli categories
@@ -38,17 +63,9 @@ class ArtifactDAOTest {
         Assertions.assertThrows(AbsenceOfRecordsException.class, () ->{ artifactDAO.get(artifactID).getAll();});
     }
 
-    @Test
-    void edit() {
-    }
 
-    @Test
-    void getAll() {
-    }
 
-    @Test
-    void get() {
-    }
+
 
     @Test
     void getAllStudentsArtifacts() {
