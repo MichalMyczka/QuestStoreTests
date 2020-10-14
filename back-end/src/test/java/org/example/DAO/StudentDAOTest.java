@@ -31,17 +31,15 @@ class StudentDAOTest {
     }
 
     @Test
-    @Order(4)
-    void testIsRemovingStudentWorks() {
+    @Order(2)
+    void testIsGetStudentWorks() throws AbsenceOfRecordsException {
         DBConnection dbConnection = new DBConnection();
         StudentDAO studentDAO = new StudentDAO(dbConnection);
         UUID userDetailsUUID = UUID.fromString("cc38bce6-fa60-4360-99df-634147cc0084");
         UUID studentIDUUID = UUID.fromString("065074cb-605f-4da0-88d6-37e7ae770388");
         UUID roleUUID = UUID.fromString("40d46809-4398-4d69-8247-3f381fc4c504");
         Student testingStudent = new Student(userDetailsUUID, "bla", "blabla", "blip", "blipblop",roleUUID,true,"432","student",studentIDUUID, 532 );
-        int expected = studentDAO.getAll().size()-1;
-        studentDAO.remove(testingStudent);
-        Assert.assertEquals(expected,studentDAO.getAll().size());
+        Assert.assertEquals(testingStudent.getAll(), studentDAO.get(userDetailsUUID).getAll());
     }
 
     @Test
@@ -58,14 +56,17 @@ class StudentDAOTest {
     }
 
     @Test
-    @Order(2)
-    void testIsGetStudentWorks() throws AbsenceOfRecordsException {
+    @Order(4)
+    void testIsRemovingStudentWorks() {
         DBConnection dbConnection = new DBConnection();
         StudentDAO studentDAO = new StudentDAO(dbConnection);
         UUID userDetailsUUID = UUID.fromString("cc38bce6-fa60-4360-99df-634147cc0084");
         UUID studentIDUUID = UUID.fromString("065074cb-605f-4da0-88d6-37e7ae770388");
         UUID roleUUID = UUID.fromString("40d46809-4398-4d69-8247-3f381fc4c504");
         Student testingStudent = new Student(userDetailsUUID, "bla", "blabla", "blip", "blipblop",roleUUID,true,"432","student",studentIDUUID, 532 );
-        Assert.assertEquals(testingStudent.getAll(), studentDAO.get(userDetailsUUID).getAll());
+        int expected = studentDAO.getAll().size()-1;
+        studentDAO.remove(testingStudent);
+        Assert.assertEquals(expected,studentDAO.getAll().size());
     }
+
 }

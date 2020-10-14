@@ -1,5 +1,7 @@
 package org.example.model;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 public class Class {
@@ -20,4 +22,10 @@ public class Class {
         return name;
     }
 
+    public List<String> getAll(){
+        List<String> list = new ArrayList<>();
+        list.add(getName());
+        list.add(getId().toString());
+        return list;
+    }
 }

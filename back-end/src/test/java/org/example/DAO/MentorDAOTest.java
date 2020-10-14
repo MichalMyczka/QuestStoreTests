@@ -31,18 +31,16 @@ class MentorDAOTest {
     }
 
     @Test
-    @Order(4)
-    void testIsRemovingMentorWorks() {
+    @Order(2)
+    void testIsGetMentorWorks() throws AbsenceOfRecordsException {
         DBConnection dbConnection = new DBConnection();
+        MentorDAO mentorDAO = new MentorDAO(dbConnection);
         UUID roleUUID = UUID.fromString("745792a7-681b-4efe-abdd-ca027678b397");
         UUID userDetailsUUID = UUID.fromString("4a7e91bf-76fb-479b-87ed-64bc8a4e93c9");
         UUID mentorIDUUID = UUID.fromString("6c89e48f-6ba9-4294-b53a-a4e893781fb6");
-        MentorDAO mentorDAO = new MentorDAO(dbConnection);
         Mentor testingMentor = new Mentor(userDetailsUUID, "testest", "test", "blabla", "bla", roleUUID,
                 true, "1234", "mentor", mentorIDUUID);
-        int expected = mentorDAO.getAll().size()-1;
-        mentorDAO.remove(testingMentor);
-        Assert.assertEquals(expected,mentorDAO.getAll().size());
+        Assert.assertEquals(testingMentor.getAll(), mentorDAO.get(userDetailsUUID).getAll());
     }
 
     @Test
@@ -60,15 +58,18 @@ class MentorDAOTest {
     }
 
     @Test
-    @Order(2)
-    void testIsGetMentorWorks() throws AbsenceOfRecordsException {
+    @Order(4)
+    void testIsRemovingMentorWorks() {
         DBConnection dbConnection = new DBConnection();
-        MentorDAO mentorDAO = new MentorDAO(dbConnection);
         UUID roleUUID = UUID.fromString("745792a7-681b-4efe-abdd-ca027678b397");
         UUID userDetailsUUID = UUID.fromString("4a7e91bf-76fb-479b-87ed-64bc8a4e93c9");
         UUID mentorIDUUID = UUID.fromString("6c89e48f-6ba9-4294-b53a-a4e893781fb6");
+        MentorDAO mentorDAO = new MentorDAO(dbConnection);
         Mentor testingMentor = new Mentor(userDetailsUUID, "testest", "test", "blabla", "bla", roleUUID,
                 true, "1234", "mentor", mentorIDUUID);
-        Assert.assertEquals(testingMentor.getAll(), mentorDAO.get(userDetailsUUID).getAll());
+        int expected = mentorDAO.getAll().size()-1;
+        mentorDAO.remove(testingMentor);
+        Assert.assertEquals(expected,mentorDAO.getAll().size());
     }
+
 }

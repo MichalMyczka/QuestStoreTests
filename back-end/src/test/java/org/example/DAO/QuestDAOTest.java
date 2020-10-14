@@ -28,15 +28,13 @@ class QuestDAOTest {
     }
 
     @Test
-    @Order(4)
-    void testIsRemoveQuestWorks() {
+    @Order(2)
+    void testIsGetQuestWorks() throws AbsenceOfRecordsException {
         UUID questIDUUID = UUID.fromString("88b8eb42-cd0b-42e3-9da0-1d36f4910aa1");
         Quest testQuest = new Quest(questIDUUID,"testowy","quest",123);
         DBConnection dbConnection = new DBConnection();
         QuestDAO questDAO = new QuestDAO(dbConnection);
-        int expected = questDAO.getAll().size()-1;
-        questDAO.remove(testQuest);
-        Assert.assertEquals(expected, questDAO.getAll().size());
+        Assert.assertEquals(testQuest.getAll(), questDAO.get(questIDUUID).getAll());
     }
 
     @Test
@@ -51,12 +49,15 @@ class QuestDAOTest {
     }
 
     @Test
-    @Order(2)
-    void testIsGetQuestWorks() throws AbsenceOfRecordsException {
+    @Order(4)
+    void testIsRemoveQuestWorks() {
         UUID questIDUUID = UUID.fromString("88b8eb42-cd0b-42e3-9da0-1d36f4910aa1");
         Quest testQuest = new Quest(questIDUUID,"testowy","quest",123);
         DBConnection dbConnection = new DBConnection();
         QuestDAO questDAO = new QuestDAO(dbConnection);
-        Assert.assertEquals(testQuest.getAll(), questDAO.get(questIDUUID).getAll());
+        int expected = questDAO.getAll().size()-1;
+        questDAO.remove(testQuest);
+        Assert.assertEquals(expected, questDAO.getAll().size());
     }
+
 }
