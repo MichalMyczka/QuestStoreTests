@@ -14,7 +14,7 @@ class ArtifactDAOTest {
 
     @Test
     @Order(1)
-    void add() throws AbsenceOfRecordsException {
+    void testIsAddArtifactWorks() throws AbsenceOfRecordsException {
         UUID categoryID = UUID.fromString("d5e59add-a91c-488e-8f7b-061d36b9ec36"); // z tabeli categories
         UUID typeID = UUID.fromString("a623b302-c968-4125-aaab-de6c15dd1a41"); // private z tabeli artifact_types
         UUID artifactID = UUID.fromString("2bb2bdd1-3e3a-49f7-afc4-98434282b110");
@@ -27,7 +27,7 @@ class ArtifactDAOTest {
 
     @Test
     @Order(2)
-    void get() throws AbsenceOfRecordsException {
+    void testIsGetArtifactWorks() throws AbsenceOfRecordsException {
         DBConnection dbConnection = new DBConnection();
         UUID categoryID = UUID.fromString("d5e59add-a91c-488e-8f7b-061d36b9ec36"); // z tabeli categories
         UUID typeID = UUID.fromString("a623b302-c968-4125-aaab-de6c15dd1a41"); // private z tabeli artifact_types
@@ -39,7 +39,7 @@ class ArtifactDAOTest {
 
     @Test
     @Order(3)
-    void edit() throws AbsenceOfRecordsException {
+    void testIsEditArtifactWorks() throws AbsenceOfRecordsException {
         DBConnection dbConnection = new DBConnection();
         UUID categoryID = UUID.fromString("d5e59add-a91c-488e-8f7b-061d36b9ec36"); // z tabeli categories
         UUID typeID = UUID.fromString("a623b302-c968-4125-aaab-de6c15dd1a41"); // private z tabeli artifact_types
@@ -52,7 +52,7 @@ class ArtifactDAOTest {
 
     @Test
     @Order(4)
-    void remove() {
+    void testIsRemovingArtifactWorks() {
         DBConnection dbConnection = new DBConnection();
         ArtifactDAO artifactDAO = new ArtifactDAO(dbConnection);
         UUID categoryID = UUID.fromString("d5e59add-a91c-488e-8f7b-061d36b9ec36"); // z tabeli categories
