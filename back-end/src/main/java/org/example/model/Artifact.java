@@ -1,19 +1,21 @@
 package org.example.model;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 public class Artifact {
 
     private UUID id;
     private String name;
-    private int price;
+    private Integer price;
     private  String category;
     private  String description;
     private  String type;
     private UUID categoryID;
     private UUID typeID;
 
-    public Artifact(UUID id, String name, int price, String category, String description, String type, UUID categoryID, UUID typeID) {
+    public Artifact(UUID id, String name, Integer price, String category, String description, String type, UUID categoryID, UUID typeID) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -32,7 +34,7 @@ public class Artifact {
         return name;
     }
 
-    public int getPrice() {
+    public Integer getPrice() {
         return price;
     }
 
@@ -64,7 +66,7 @@ public class Artifact {
         this.name = name;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(Integer price) {
         this.price = price;
     }
 
@@ -88,4 +90,16 @@ public class Artifact {
         this.typeID = typeID;
     }
 
+    public List<String> getAll(){
+        List<String> result = new ArrayList<>();
+        result.add(getId().toString());
+        result.add(getName());
+        result.add(getPrice().toString());
+        result.add(getCategory());
+        result.add(getDescription());
+        result.add(getType());
+        result.add(getCategoryID().toString());
+        result.add(getTypeID().toString());
+        return  result;
+    }
 }
