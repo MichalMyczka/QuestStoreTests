@@ -3,15 +3,20 @@ package org.example.DAO;
 import org.example.DAO.Exception.AbsenceOfRecordsException;
 import org.example.model.Mentor;
 import org.junit.Assert;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class MentorDAOTest {
 
     @Test
+    @Order(1)
     void testIsAddingMentorWorks() {
         UUID roleUUID = UUID.fromString("745792a7-681b-4efe-abdd-ca027678b397");
         UUID userDetailsUUID = UUID.fromString("4a7e91bf-76fb-479b-87ed-64bc8a4e93c9");
@@ -26,6 +31,7 @@ class MentorDAOTest {
     }
 
     @Test
+    @Order(4)
     void testIsRemovingMentorWorks() {
         DBConnection dbConnection = new DBConnection();
         UUID roleUUID = UUID.fromString("745792a7-681b-4efe-abdd-ca027678b397");
@@ -40,6 +46,7 @@ class MentorDAOTest {
     }
 
     @Test
+    @Order(3)
     void testIsEditMentorWorks() throws AbsenceOfRecordsException {
         DBConnection dbConnection = new DBConnection();
         UUID roleUUID = UUID.fromString("745792a7-681b-4efe-abdd-ca027678b397");
@@ -53,15 +60,8 @@ class MentorDAOTest {
     }
 
     @Test
-    void testIsAddedMentorIsAddedProperly() {
-        DBConnection dbConnection = new DBConnection();
-        MentorDAO mentorDAO = new MentorDAO(dbConnection);
-        System.out.println(mentorDAO.getAll());
-        Assert.assertEquals(1, mentorDAO.getAll().size());
-    }
-
-    @Test
-    void get() throws AbsenceOfRecordsException {
+    @Order(2)
+    void testIsGetMentorWorks() throws AbsenceOfRecordsException {
         DBConnection dbConnection = new DBConnection();
         MentorDAO mentorDAO = new MentorDAO(dbConnection);
         UUID roleUUID = UUID.fromString("745792a7-681b-4efe-abdd-ca027678b397");
