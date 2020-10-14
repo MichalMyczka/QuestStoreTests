@@ -25,7 +25,7 @@ public class QuestDAO implements DAO<Quest> {
         try {
             dbConnection.connect();
             PreparedStatement preparedStatement = dbConnection.getConnection().prepareStatement(
-                    "INSERT INTO (id, name, description, value) VALUES (?, ?, ?, ?);");
+                    "INSERT INTO quests (id, name, description, value) VALUES (?, ?, ?, ?)");
             preparedStatement.setObject(1, quest.getId(), Types.OTHER);
             preparedStatement.setString(2, quest.getName());
             preparedStatement.setString(3, quest.getDescription());

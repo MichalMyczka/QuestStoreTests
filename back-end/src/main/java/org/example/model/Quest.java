@@ -1,5 +1,7 @@
 package org.example.model;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 public class Quest {
@@ -7,9 +9,9 @@ public class Quest {
     private UUID id;
     private  String name;
     private String description;
-    private int value;
+    private Integer value;
 
-    public Quest(UUID id, String name, String description, int value) {
+    public Quest(UUID id, String name, String description, Integer value) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -28,7 +30,7 @@ public class Quest {
         return description;
     }
 
-    public int getValue() {
+    public Integer getValue() {
         return value;
     }
 
@@ -40,8 +42,16 @@ public class Quest {
         this.description = description;
     }
 
-    public void setValue(int value) {
+    public void setValue(Integer value) {
         this.value = value;
     }
 
+    public List<String> getAll(){
+        List<String> list = new ArrayList<>();
+        list.add(getName());
+        list.add(getValue().toString());
+        list.add(getDescription());
+        list.add(getId().toString());
+        return list;
+    }
 }
