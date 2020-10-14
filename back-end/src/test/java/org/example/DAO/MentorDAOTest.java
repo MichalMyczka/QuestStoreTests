@@ -53,7 +53,7 @@ class MentorDAOTest {
     }
 
     @Test
-    void getAll() {
+    void testIsAddedMentorIsAddedProperly() {
         DBConnection dbConnection = new DBConnection();
         MentorDAO mentorDAO = new MentorDAO(dbConnection);
         System.out.println(mentorDAO.getAll());
