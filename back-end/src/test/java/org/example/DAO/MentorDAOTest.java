@@ -61,6 +61,14 @@ class MentorDAOTest {
     }
 
     @Test
-    void get() {
+    void get() throws AbsenceOfRecordsException {
+        DBConnection dbConnection = new DBConnection();
+        MentorDAO mentorDAO = new MentorDAO(dbConnection);
+        UUID roleUUID = UUID.fromString("745792a7-681b-4efe-abdd-ca027678b397");
+        UUID userDetailsUUID = UUID.fromString("4a7e91bf-76fb-479b-87ed-64bc8a4e93c9");
+        UUID mentorIDUUID = UUID.fromString("6c89e48f-6ba9-4294-b53a-a4e893781fb6");
+        Mentor testingMentor = new Mentor(userDetailsUUID, "testest", "test", "blabla", "bla", roleUUID,
+                true, "1234", "mentor", mentorIDUUID);
+        Assert.assertEquals(testingMentor.getAll(), mentorDAO.get(userDetailsUUID).getAll());
     }
 }
