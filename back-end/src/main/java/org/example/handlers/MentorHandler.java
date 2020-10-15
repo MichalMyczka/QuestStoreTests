@@ -74,7 +74,7 @@ public class MentorHandler implements HttpHandler {
         }
     }
 
-    private String getMentors() throws JsonProcessingException {
+    public String getMentors() throws JsonProcessingException {
         List<User> mentors = userDAO.getAllMentors();
         ObjectMapper mapper = new ObjectMapper();
         return mapper.writeValueAsString(mentors);
