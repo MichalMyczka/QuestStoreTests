@@ -5,6 +5,8 @@ import org.example.model.Artifact;
 import org.junit.Assert;
 import org.junit.jupiter.api.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -64,10 +66,12 @@ class ArtifactDAOTest {
     }
 
 
-
-
-
     @Test
+    @Order(5)
     void getAllStudentsArtifacts() {
+        DBConnection dbConnection = new DBConnection();
+        ArtifactDAO artifactDAO = new ArtifactDAO(dbConnection);
+        UUID studentID = UUID.fromString("561fbc20-4970-4db8-a1c9-5d080576e724");
+        Assert.assertEquals(2, artifactDAO.getAllStudentsArtifacts(studentID).size());
     }
 }
